@@ -1,0 +1,416 @@
+/* General Styles */
+body {
+    background-color: #000000;
+    font-family: 'Montserrat', sans-serif;
+    /* Consistent font */
+    margin: 0;
+    padding: 0;
+    color: #F7E6C4;
+    /* Main text color */
+}
+
+/* Navbar Background and Brand */
+.navbar {
+    background: none !important;
+    padding: 15px 20px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 999;
+}
+
+/* Navbar Brand Styling */
+.navbar-brand {
+    font-family: 'grey qo', serif;
+    font-size: 2.5rem;
+    color: #FFF4F4;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.navbar-brand:hover {
+    color: #F1C376;
+}
+
+/* Navbar Links */
+.nav-link {
+    font-size: 1.1rem;
+    color: #F7E6C4;
+    margin-right: 1.5rem;
+    transition: color 0.3s ease, transform 0.2s ease-in-out;
+}
+
+.nav-link:hover,
+.nav-link.active {
+    color: #a67c52;
+    transform: scale(1.05);
+}
+
+/* Dropdown Menu Styling */
+.dropdown-menu {
+    background: rgba(0, 0, 0, 0.85);
+    border: none;
+    border-radius: 10px;
+    padding: 10px 0;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    min-width: 200px;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.nav-item.dropdown:hover .dropdown-menu {
+    display: block;
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+/* Dropdown Items Styling */
+.dropdown-item {
+    font-size: 15px;
+    color: #ECE3CE;
+    padding: 10px 15px;
+    transition: all 0.3s ease;
+}
+
+.dropdown-item:hover {
+    background-color: #739072;
+    color: #ffffff;
+}
+
+/* Dropdown Divider Styling */
+.dropdown-divider {
+    height: 1px;
+    background-color: rgba(255, 255, 255, 0.2);
+    margin: 5px 0;
+}
+
+/* Hero Section Styling */
+.hero-section {
+    height: 100vh;
+    position: inherit;
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0) 60%, rgba(0, 0, 0, 0.7) 100%), url('../img/menu1.jpg');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    color: white;
+    text-align: center;
+    padding: 8rem;
+    position: relative;
+    z-index: 1;
+}
+
+.hero-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    z-index: -1;
+}
+
+.hero-section h3 {
+    color: #FFF4F4;
+    font-size: 3rem;
+    margin: 0;
+}
+
+.hero-section p {
+    font-size: 1.5rem;
+    color: #FFF4F4;
+    margin: 0.5rem 0 0;
+}
+
+/* Styling for Search Bar */
+.search-bar {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.search-input {
+    width: 300px;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease;
+}
+
+.search-input:focus {
+    outline: none;
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+}
+
+.search-btn {
+    padding: 10px 15px;
+    background-color: #F1C376;
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.search-btn:hover {
+    background-color: #a67c52;
+}
+
+/* General Section Styling */
+.restaurant-sections {
+    background-color: #000000;
+    color: #fff;
+    padding: 40px 20px;
+}
+
+.menu-section {
+    margin-bottom: 50px;
+}
+
+.section-title {
+    font-family: 'Grey Qo', serif;
+    font-size: 2.5rem;
+    display: flex;
+    text-align: flex-start;
+    padding-left: 40px;
+    color: #F1C376;
+    margin-bottom: 30px;
+}
+
+/* Card Container Styles */
+.card-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 30px;
+    padding: 40px;
+}
+
+/* Product Card Styling */
+.product-card {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+.product-card img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+}
+
+/* Content inside the card */
+.product-card-content {
+    padding: 15px;
+}
+
+.product-card-content h4 {
+    font-size: 1.3rem;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.product-card-content p {
+    color: #e67e22;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+/* Button inside the card */
+.product-card-content button {
+    background-color: #3498db;
+    color: white;
+    border: none;
+    padding: 10px;
+    width: 100%;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.product-card-content button:hover {
+    background-color: #2980b9;
+}
+
+
+
+/* Popup overlay (gradient background) */
+.popup-overlay {
+    display: none;
+    /* Hidden by default */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.2));
+    /* Gradient effect */
+    z-index: 999;
+}
+
+/* Close button (X) styling */
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 30px;
+    color: #333;
+    background: none;
+    border: none;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.close-btn:hover {
+    color: #ff0000;
+    /* Red on hover */
+}
+
+/* Popup overlay (gradient background) */
+.popup-overlay {
+    display: none;
+    /* Hidden by default */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.2));
+    /* Gradient effect */
+    z-index: 999;
+}
+
+/* Popup styling */
+.popup {
+    display: none;
+
+    /* Hidden by default */
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    /* Centering */
+
+    transform: translate(-50%, -50%);
+    z-index: 1000;
+    color: #606C5D;
+    background: #FFF4F4;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    width: 30%;
+    height: 80%;
+    max-width: 800px;
+    max-height: 1066px;
+    text-align: center;
+    overflow-y: auto;
+    /* Enable vertical scrolling */
+    overflow-x: hidden;
+    /* Prevent horizontal scrolling */
+    transition: transform 0.3s ease-in-out;
+}
+
+.popup::-webkit-scrollbar {
+    width: 0px;
+    /* Hides the scrollbar */
+    background: transparent;
+    /* Make scrollbar background transparent */
+}
+
+.popup {
+    -ms-overflow-style: none;
+    /* For Internet Explorer and Edge */
+    scrollbar-width: none;
+    /* For Firefox */
+}
+
+
+.popup-content img {
+    width: 100%;
+    /* Adjusted image size */
+    height: 60vh;
+    object-fit: fill;
+    margin-bottom: 10px;
+}
+
+.quantity-control {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 10px 0;
+}
+
+.quantity-control button {
+    padding: 5px 10px;
+    background-color: #606C5D;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.quantity-control button:hover {
+    background-color: #606C5D;
+}
+
+.quantity-control span {
+    padding: 0 10px;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.popup button {
+    padding: 5px 10px;
+    margin: 10px;
+    background-color: #F1C376;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.popup button:hover {
+    background-color: #a67c52;
+}
+
+/* Show popup and overlay */
+.popup.show,
+.popup-overlay.show {
+    display: block;
+}
+
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .navbar {
+        padding: 10px 15px;
+    }
+
+    .hero-section {
+        padding: 6rem;
+    }
+
+    .card-container {
+        padding: 20px;
+    }
+
+    .product-card img {
+        height: 200px;
+    }
+}
