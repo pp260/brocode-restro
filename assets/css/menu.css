@@ -91,7 +91,7 @@ body {
 .hero-section {
     height: 100vh;
     position: inherit;
-    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0) 60%, rgba(0, 0, 0, 0.7) 100%), url('../img/menu1.jpg');
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0) 40%, rgba(0, 0, 0, 0.7) 100%), url('../img/menu1.jpg');
     background-size: cover;
     background-position: center;
     display: flex;
@@ -198,6 +198,8 @@ body {
 
 /* Product Card Styling */
 .product-card {
+    
+    justify-content: space-between;
     background-color: #fff;
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
@@ -218,6 +220,7 @@ body {
 
 /* Content inside the card */
 .product-card-content {
+   
     padding: 15px;
 }
 
@@ -225,6 +228,14 @@ body {
     font-size: 1.3rem;
     margin-bottom: 10px;
     color: #333;
+}
+.product-card-content h6 {
+    font-size: 0.9rem; /* Smaller font size for secondary text */
+    color: #666; /* Subtle gray color */
+    margin: 5px 0; /* Adds spacing around the info */
+    line-height: 1.4; /* Improves readability */
+    font-weight: 400; /* Normal font weight */
+    font-style: italic; /* Optional: Makes the text italic for emphasis */
 }
 
 .product-card-content p {
@@ -251,23 +262,10 @@ body {
 
 
 
-/* Popup overlay (gradient background) */
-.popup-overlay {
-    display: none;
-    /* Hidden by default */
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.2));
-    /* Gradient effect */
-    z-index: 999;
-}
 
 /* Close button (X) styling */
 .close-btn {
-    position: absolute;
+    position: fixed;
     top: 10px;
     right: 10px;
     font-size: 30px;
@@ -313,7 +311,7 @@ body {
     background: #FFF4F4;
     border-radius: 8px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-    padding: 20px;
+
     width: 30%;
     height: 80%;
     max-width: 800px;
@@ -344,8 +342,8 @@ body {
 .popup-content img {
     width: 100%;
     /* Adjusted image size */
-    height: 60vh;
-    object-fit: fill;
+    height: 40vh;
+    object-fit: cover;
     margin-bottom: 10px;
 }
 
@@ -397,20 +395,166 @@ body {
 
 
 /* Responsive Adjustments */
+@media (max-width: 1200px) {
+    .hero-section {
+        padding: 5rem;
+        text-align: center;
+    }
+
+    .section-title {
+        font-size: 2rem;
+        padding-left: 20px;
+    }
+
+    .product-card img {
+        height: 220px;
+    }
+}
+
+@media (max-width: 992px) {
+    .navbar-brand {
+        font-size: 2rem;
+    }
+
+    .nav-link {
+        font-size: 1rem;
+        margin-right: 1rem;
+    }
+
+    .hero-section {
+        padding: 4rem;
+    }
+
+    .card-container {
+        gap: 20px;
+        padding: 20px;
+    }
+
+    .product-card img {
+        height: 180px;
+    }
+}
+
 @media (max-width: 768px) {
     .navbar {
         padding: 10px 15px;
     }
 
     .hero-section {
-        padding: 6rem;
+        padding: 3rem;
+    }
+
+    .section-title {
+        font-size: 1.8rem;
+        padding-left: 10px;
     }
 
     .card-container {
-        padding: 20px;
+        gap: 15px;
+        padding: 15px;
     }
 
     .product-card img {
-        height: 200px;
+        height: 150px;
+    }
+
+    .product-card-content h4 {
+        font-size: 1.1rem;
+    }
+
+    .product-card-content p {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .navbar-brand {
+        font-size: 1.8rem;
+    }
+
+    .nav-link {
+        font-size: 0.9rem;
+        margin-right: 0.8rem;
+    }
+
+    .hero-section {
+        padding: 2rem;
+        text-align: center;
+    }
+
+    .section-title {
+        font-size: 1.5rem;
+        text-align: center;
+        padding: 0;
+    }
+
+    .card-container {
+        grid-template-columns: 1fr;
+        gap: 10px;
+        padding: 10px;
+    }
+
+    .product-card img {
+        height: 120px;
+    }
+
+    .product-card-content h4 {
+        font-size: 1rem;
+    }
+
+    .product-card-content p {
+        font-size: 0.9rem;
+    }
+
+    .popup {
+        width: 90%;
+        height: 70%;
+    }
+
+    .popup-content img {
+        height: 30vh;
+    }
+}
+
+@media (max-width: 360px) {
+    .navbar-brand {
+        font-size: 1.5rem;
+    }
+
+    .nav-link {
+        font-size: 0.8rem;
+    }
+
+    .hero-section {
+        padding: 1.5rem;
+    }
+
+    .section-title {
+        font-size: 1.3rem;
+    }
+
+    .card-container {
+        gap: 5px;
+    }
+
+    .product-card img {
+        height: 100px;
+    }
+
+    .product-card-content h4 {
+        font-size: 0.9rem;
+    }
+
+    .product-card-content p {
+        font-size: 0.8rem;
+    }
+
+    .popup {
+        width: 85%;
+        height: 65%;
+    }
+
+    .popup-content img {
+        height: 25vh;
     }
 }

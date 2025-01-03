@@ -478,27 +478,107 @@ main section p {
     padding-top: 20px;
 }
 
+#preloader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: white; /* Or any background color */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+.spinner {
+    width: 50px;
+    height: 50px;
+    border: 5px solid #ccc;
+    border-top: 5px solid #007bff;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+#content {
+    display: none; /* Content is hidden initially */
+}
 
 /* Responsive Adjustments */
-@media (max-width: 768px) {
+@media (max-width: 1200px) {
     .navbar {
         padding: 12px 15px;
     }
-
-    .carousel-caption h5 {
-        font-size: 26px;
+    .hero-section h3 {
+        font-size: 2rem;
     }
-
-    .carousel-caption p {
-        font-size: 14px;
+    .hero-section p {
+        font-size: 1rem;
     }
-
-    .carousel-caption .form-control {
-        width: 80%;
-        max-width: none;
+    #carouselExampleCaptions {
+        margin: 10px auto;
     }
+}
 
-    .carousel-caption .btn {
-        width: auto;
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        padding: 10px 15px;
+    }
+    .navbar-brand {
+        font-size: 1.8rem;
+    }
+    .nav-link {
+        font-size: 0.9rem;
+        margin-right: 1rem;
+    }
+    .hero-section {
+        padding: 4rem 1rem;
+    }
+    .hero-section h3 {
+        font-size: 1.8rem;
+    }
+    .hero-section p {
+        font-size: 1rem;
+    }
+    #carouselExampleCaptions .carousel-item img {
+        height: 400px;
+    }
+}
+
+@media (max-width: 480px) {
+    .navbar-brand {
+        font-size: 1.5rem;
+    }
+    .nav-link {
+        font-size: 0.8rem;
+        margin-right: 0.8rem;
+    }
+    .hero-section {
+        padding: 3rem 1rem;
+    }
+    .hero-section h3 {
+        font-size: 1.5rem;
+    }
+    .hero-section p {
+        font-size: 0.9rem;
+    }
+    #carouselExampleCaptions .carousel-item img {
+        height: 300px;
+    }
+    .footer h2 {
+        font-size: 1.5rem;
+    }
+    .footer a {
+        font-size: 0.9rem;
     }
 }
