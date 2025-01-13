@@ -31,20 +31,26 @@ function generateCards(sectionId, products) {
     const container = document.getElementById(sectionId);
     container.innerHTML = ''; // Clear any existing content
 
+    // Use a string to accumulate all the card HTML
+    let cardsHTML = '';
     products.forEach((product, index) => {
-        const card = `
+        cardsHTML += `
             <div class="product-card">
                 <img src="${product.img}" alt="${product.name}" />
                 <div class="product-card-content">
                     <h4>${product.name}</h4>
-                    <p>INR ${product.price.toFixed(2)}</p>
-                    <button onclick="showPopup(${index}, '${sectionId}')">Add to Cart</button>
+                    <p>&#8377; ${product.price.toFixed(2)}</p>
+                    <button onclick="showPopup(${index}, '${sectionId}')">Add item</button>
                 </div>
             </div>
         `;
-        container.innerHTML += card;
     });
+
+    // Update the DOM once with the complete HTML
+    container.innerHTML = cardsHTML;
 }
+
+
 
 // Function to show popup
 function showPopup(index, sectionId) {
@@ -53,22 +59,22 @@ function showPopup(index, sectionId) {
     const popupOverlay = document.getElementById('popup-overlay');
 
     const popupContent = `
-        <div class="popup-content">
+        <div class="popup-content"> 
             <img src="${product.img}" alt="${product.name}" />
             <h3>${product.name}</h3>
-            <p>Price per unit: $${product.price.toFixed(2)}</p>
+            <p>Price per unit: &#8377; ${product.price.toFixed(2)}</p>
             <div class="quantity-control">
                 <button onclick="changeQuantity(-1)">-</button>
                 <span id="quantity">1</span>
                 <button onclick="changeQuantity(1)">+</button>
             </div>
-            <p>Total Price: $<span id="total-price">${product.price.toFixed(2)}</span></p>
+            <p>Total Price: &#8377; <span id="total-price">${product.price.toFixed(2)}</span></p>
             <button onclick="addToBag('${product.name}', ${product.price})">Add to Bag</button>
             <button class="close-btn" onclick="closePopup()">&#10005;</button>
             
         </div>
     `;
-    popup.innerHTML = popupContent;
+    popup.innerHTML = popupContent; 
     popup.style.display = 'block';
     popupOverlay.style.display = 'block';
     popup.dataset.price = product.price; // Store the price for calculations
@@ -120,4 +126,16 @@ window.addEventListener("load", () => {
 
     preloader.style.display = "none"; // Hide the preloader
     content.style.display = "block"; // Show the content
+});
+
+// Get the navbar element
+const navbar = document.querySelector('.navbar');
+
+// Add a scroll event listener
+window.addEventListener('scroll', () => {
+  if (window.scrollY > 50) {
+    navbar.classList.add('scrolled'); // Add the background
+  } else {
+    navbar.classList.remove('scrolled'); // Remove the background
+  }
 });
